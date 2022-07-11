@@ -3,7 +3,7 @@
 $servidor = "localhost";
 $login = "root";
 $senha = "";
-$nomebanco = "alunos";
+$nomebanco = "sistemapi";
 
 $conexao = new mysqli($servidor , $login , $senha , $nomebanco);
 
