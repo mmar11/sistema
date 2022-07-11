@@ -1,0 +1,32 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10px;
+}
+
+body {
+  background: rgb(34, 195, 166);
+  background: linear-gradient(
+    94deg,
+    rgba(34, 195, 166, 1) 0%,
+    rgba(254, 115, 0, 1) 100%
+  );
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  background: rgb(58, 28, 4);
+
+  padding: 20px;
+  font-size: 2rem;
+  border-radius: 30px;
+  color: aliceblue;
+}
