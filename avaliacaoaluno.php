@@ -42,31 +42,32 @@ $resultado = $conexao -> query($sql) ;
  
 
   
-  <form action="<?php $_SERVER['PHP_SELF'];?>" method="POST" class="menu" id="cadastroadm" onSubmit="alert('Cadastro efetuado com sucesso!')">
+  <form action="<?php $_SERVER['PHP_SELF'];?>" method="POST" class="menu" id="aval" onSubmit="alert('Avaliação efetuada com sucesso!')">
     
     <label for="nome">Nome</label>
-    <input type="text" name="nome" id="nome">
-    <label for="nasc">Data de Nascimento</label>
-    <input type="date" name="nasc" id="nasc">
-    <label for="end">Endereço</label>
-    <input type="text" name="end" id="end">
-    <label for="esc">Escolaridade</label>
-    <input type="text" name="esc" id="esc">
-    <label for="nivel">Nivel</label>
-    <select name="nivel" id="nivel">
-      <option value="">Selecione a escolaridade</option>
-      <option value="fundamental">Fundamental</option>
-      <option value="medio">Medio</option>
-    </select>
-    <label for="matr">Matricula</label>
-    <input type="text" name="matr" id="matr">
-    <label for="tel">Telefone</label>
-    <input type="tel" name="tel" id="tel">
-    <label for="E-mail">E-mail</label>
-    <input type="email" name="email" id="email">
-    <label for="cpf">CPF</label>
-    <input type="text" name="cpf" id="cpf">
-    <button type="submit"  name="submit">CADASTRAR</button>  
+    <span>INERIR Nome</span>
+
+    <label for="email">Email</label>
+    <span>INERIR EMAIL</span>
+ 
+ 
+ 
+    <label for="html">HTML</label>
+    <input type="range" name="html" id="html" min="0" max="10">
+    <label for="css">CSS</label>
+    <input type="range" name="css" id="css"min="0" max="10">
+    <label for="php">PHP</label>
+    <input type="range" name="php" id="php"min="0" max="10">
+    <label for="uxui">UXUI</label>
+    <input type="range" name="uxui" id="uxui"min="0" max="10">
+    <label for="github">GITHUB</label>
+    <input type="range" name="github" id="github"min="0" max="10">
+  
+
+    
+    
+    
+    <button type="submit"  name="submit">AVALIAR</button>  
   
   </form>
 
@@ -75,13 +76,9 @@ $resultado = $conexao -> query($sql) ;
   </div>
 
 
-  <?php 
 
 
 
-  ?>
-
-
-<!-- <script src="js.js"></script> -->
+<script src="js.js"></script>
 </body>
 </html>

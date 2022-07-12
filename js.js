@@ -20,3 +20,6 @@ pesquisar.addEventListener("keydown", function (event) {
 function buscarDados() {
   window.location = "inicio.php?search=" + pesquisar.value;
 }
+
+let range = document.querySelector("#html");
+console.log(range.value);
