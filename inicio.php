@@ -38,11 +38,22 @@ $retorno = $conexao -> query($sql);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SISTEMA MXM ESCOLAR</title>
-  <link rel="stylesheet" href="style.css">
+
   <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">  
+<link rel="stylesheet" href="style.css">
+
+<style>
+body {
+  background-color: lightgray;
+  color: black;
+
+}
+
+</style>
   </head>
 <body>
+  <div id="fundo">
   <div class="">
   <h1>SISTEMA MXM ESCOLAR</h1>
 
@@ -98,6 +109,7 @@ while ($userData = mysqli_fetch_assoc($retorno)){
   echo "<td>".$userData['cpf']."</td>";
   echo "<td> <a href ='editar.php?id=$userData[id]'><img src='img/pencil.svg'></a></td>";
   echo "<td> <a href ='delete.php?id=$userData[id]'><img src='img/trash.svg' onclick = 'delete()' ></a></td>";
+  echo "<td> <a href ='avaliacaoaluno.php?id=$userData[id]'><img src='' onclick = 'delete()' ></a></td>";
   
   echo "</tr>";
 
@@ -110,6 +122,7 @@ while ($userData = mysqli_fetch_assoc($retorno)){
 
 
 ?>
+</div>
 </tbody>
 
 </table>

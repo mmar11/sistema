@@ -37,7 +37,7 @@ $resultado = $conexao -> query($sql) ;
 <body>
   <h1>SISTEMA MXM ESCOLAR</h1>
 
-  <h2>Curso Full Stack</h2>
+  <h2>Auto avaliação conteúdos</h2>
 
  
 
