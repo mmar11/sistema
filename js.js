@@ -1,25 +1,24 @@
-function validar() {
-  let senha1 = document.querySelector("#senha1").value;
-  let senha2 = document.querySelector("#senha2").value;
+let validar = document.getElementById("validar");
+// var pesquisar = document.getElementById("pesquisar");
 
-  if (senha1 === senha2) {
-    document.getElementById("cadastroadm").submit();
-  } else {
-    alert("senhas diferentes");
-  }
+// function buscarDados() {
+//   window.location = "inicio.php?search=" + pesquisar.value;
+// }
+function validarDados() {
+  window.location = "iniciocopy.php?search=" + validar.value;
 }
 
-let pesquisar = document.querySelector("#pesquisar");
+// pesquisar.addEventListener("keydown", function (event) {
+//   if (event.key == "Enter") {
+//     buscarDados();
+//   }
+// });
 
-pesquisar.addEventListener("keydown", function (event) {
+validar.addEventListener("keydown", function (event) {
   if (event.key == "Enter") {
-    buscarDados();
+    validarDados();
   }
 });
 
-function buscarDados() {
-  window.location = "inicio.php?search=" + pesquisar.value;
-}
-
-let range = document.querySelector("#html");
-console.log(range.value);
+// let range = document.querySelector("#html");
+// console.log(range.value);

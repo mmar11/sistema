@@ -1,21 +1,19 @@
 <?php
-
 include_once 'conexao.php';
 
 
-if(empty($_GET['search'])){
-
-echo  $preencha = "Preencha a busca pelo cpf ou email";
-// $sql = "SELECT * FROM cad_alunos ORDER BY nome ASC";
+if(!empty($_GET['search'])){
+  
+$busca = $_GET['search'];
+$sql = "SELECT * FROM cad_alunos WHERE nome LIKE '%$busca%' ORDER BY nome ASC";
 
 }
 else{
+$sql = "SELECT * FROM cad_alunos ORDER BY nome ASC";
 
-$busca = $_GET['search'];
-$sql = "SELECT * FROM cad_alunos WHERE nome LIKE '%$busca%' ORDER BY nome ASC";
-$retorno = $conexao -> query($sql);
+
 }
-
+$retorno = $conexao -> query($sql);
 
 ?>
 
@@ -35,7 +33,7 @@ $retorno = $conexao -> query($sql);
 <style>
 body {
   background-color: lightgray;
-  color: white;
+  color: black;
 
 }
 
@@ -51,6 +49,7 @@ body {
   </div>
 
 <div class="busca">
+  
   <input type="search" id="validar">
   <button type="button" class="btn btn-secondary btn-lg" onclick="validarDados()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -61,7 +60,6 @@ body {
 
 
   <div class="menu">
-<span>Bem vindo </span>
 
 <table class="table text-white table-bg">
 <thead>
@@ -78,14 +76,10 @@ body {
     <th scope="col">CPF</th>
   </tr>
 </thead>
+
+
 <tbody>
-
-
 <?php 
-if(empty($_GET['search'])){
-  echo  $preencha = "Preencha a busca pelo cpf ou email";
-}else{
-  
 while ($userData = mysqli_fetch_assoc($retorno)){
   
   echo "<tr>";
@@ -100,12 +94,18 @@ while ($userData = mysqli_fetch_assoc($retorno)){
   echo "<td>".$userData['email']."</td>";
   echo "<td>".$userData['cpf']."</td>";
   echo "<td> <a href ='editar.php?id=$userData[id]'><img src='img/pencil.svg'></a></td>";
-  echo "<td> <a href ='delete.php?id=$userData[id]'><img src='img/trash.svg'></a></td>";
-  echo "<td> <a href ='avaliacaoaluno.php?id=$userData[id]'> <img src='img/pencil.svg'></a></td>";
+  echo "<td> <a href ='delete.php?id=$userData[id]'><img src='img/trash.svg' onclick = 'delete()' ></a></td>";
+  echo "<td> <a href ='avaliacaoaluno.php?id=$userData[id]'><img src='img/pencil.svg' onclick = 'delete()' ></a></td>";
+  
   echo "</tr>";
 
-}
+
+
+
 };
+
+
+
 
 ?>
 </div>
@@ -113,18 +113,15 @@ while ($userData = mysqli_fetch_assoc($retorno)){
 
 </table>
 
+
+
+
+
 <a href="sair.php"  ><button id="sair">SAIR</button> </a>
 
   </div>
 
-  <script>
-  let validar = document.getElementById("validar");
-
-  function validarDados() {
-  window.location = "iniciocopy.php?search=" + validar.value;
-}
-
-  </script>
+  <script src="js/script.js"></script>
 
 </body>
 </html>

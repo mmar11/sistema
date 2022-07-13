@@ -108,8 +108,8 @@ while ($userData = mysqli_fetch_assoc($retorno)){
   echo "<td>".$userData['email']."</td>";
   echo "<td>".$userData['cpf']."</td>";
   echo "<td> <a href ='editar.php?id=$userData[id]'><img src='img/pencil.svg'></a></td>";
-  echo "<td> <a href ='delete.php?id=$userData[id]'><img src='img/trash.svg' onclick = 'delete()' ></a></td>";
-  echo "<td> <a href ='avaliacaoaluno.php?id=$userData[id]'><img src='' onclick = 'delete()' ></a></td>";
+  echo "<td> <a href ='delete.php?id=$userData[id]'><img src='img/trash.svg'></a></td>";
+  echo "<td> <a href ='avaliacaoaluno.php?id=$userData[id]'><img src=''></a></td>";
   
   echo "</tr>";
 
